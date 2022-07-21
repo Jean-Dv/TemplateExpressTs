@@ -20,6 +20,9 @@ export class Server {
     }
     this.app = express()
     this.routePrefix = '/api/1.0'
+    this.config()
+    this.middlewares()
+    this.routes()
     Server.singletonServer = this
   }
 
