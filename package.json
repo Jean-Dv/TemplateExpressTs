@@ -1,0 +1,29 @@
+{
+  "name": "moonshardapi",
+  "version": "0.0.1",
+  "description": "Api for moonshard WoW use database of Cataclysm 4.3.4",
+  "main": "app.ts",
+  "scripts": {
+    "test": "NODE_ENV=test npx jest --verbose"
+  },
+  "author": "JeanDev <mrjunior127@gmail.com> (https://github.com/Jean-Dv)",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "log4js": "^6.6.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^28.1.6",
+    "@types/node": "^18.0.6",
+    "@types/supertest": "^2.0.12",
+    "jest": "^28.1.3",
+    "supertest": "^6.2.4",
+    "ts-jest": "^28.0.7",
+    "ts-node-dev": "^2.0.0",
+    "ts-standard": "^11.0.0",
+    "typescript": "^4.7.4"
+  }
+}
