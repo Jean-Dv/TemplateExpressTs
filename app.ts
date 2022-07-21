@@ -1,4 +1,4 @@
-import { Server } from "./bin/server"
+import { Server } from './bin/server'
 import dotenv from 'dotenv'
 
 dotenv.config()
@@ -8,4 +8,4 @@ const logger = server.logger
 const routePrefix = server.routePrefix
 server.start()
 
-export { server, appServer, routePrefix, logger}
+export { server, appServer, routePrefix, logger }
