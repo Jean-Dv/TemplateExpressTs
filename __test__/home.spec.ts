@@ -7,7 +7,7 @@ describe(`GET ${routePrefix}/ping`, () => {
     const response = await request(appServer)
       .get(`${routePrefix}/ping`)
     expect(response.statusCode).toBe(200)
-    expect(response.body.message).toMatch('Pong')
+    expect(response.body.message).toMatch('pong')
   })
 })
 
