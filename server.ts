@@ -1,7 +1,8 @@
 import express, { Application } from 'express'
 import log4js, { Log4js } from 'log4js'
 
-import { homeRouter } from '../api/home/router'
+import ConfigEnv from './config/config.env'
+import { homeRouter } from './api/home/router'
 
 export class Server {
   public logger!: any
@@ -11,25 +12,23 @@ export class Server {
 
   private port!: string | number
   private log!: Log4js
-  private listen: any
 
-  private static singletonServer: Server
+  private static _instance: Server
 
   constructor () {
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    if (Server.singletonServer) {
-      return Server.singletonServer
+    if (Server._instance instanceof Server) {
+      return Server._instance
     }
     this.app = express()
-    this.routePrefix = '/api/1.0'
+    this.routePrefix = '/api/v1'
     this.config()
     this.middlewares()
     this.routes()
-    Server.singletonServer = this
+    Server._instance = this
   }
 
   private config (): void {
-    this.port = (process.env.PORT != null ? process.env.PORT : 8080)
+    this.port = ConfigEnv.PORT
     this.log = log4js
     this.log.configure('./config/log4js.json')
     this.logger = this.log.getLogger('server')
@@ -45,12 +44,10 @@ export class Server {
   }
 
   start (): void {
-    this.listen = this.app.listen(this.port, () => {
-      this.logger.info(`[*] Server is running on port ${this.port}...`)
-    })
-  }
-
-  close (): void {
-    this.listen.close()
+    if (ConfigEnv.NODE_ENV !== 'test') {
+      this.app.listen(this.port, () => {
+        this.logger.info(`[*] Server is running on port ${this.port}...`)
+      })
+    }
   }
 }
