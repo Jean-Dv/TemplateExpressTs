@@ -16,12 +16,11 @@ export class Server {
   private static singletonServer: Server
 
   constructor () {
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    if (Server.singletonServer) {
+    if (Server.singletonServer instanceof Server) {
       return Server.singletonServer
     }
     this.app = express()
-    this.routePrefix = '/api/1.0'
+    this.routePrefix = '/api/v1'
     this.config()
     this.middlewares()
     this.routes()
@@ -45,9 +44,11 @@ export class Server {
   }
 
   start (): void {
-    this.listen = this.app.listen(this.port, () => {
-      this.logger.info(`[*] Server is running on port ${this.port}...`)
-    })
+    if (process.env.NODE_ENV !== 'test') {
+      this.listen = this.app.listen(this.port, () => {
+        this.logger.info(`[*] Server is running on port ${this.port}...`)
+      })
+    }
   }
 
   close (): void {
