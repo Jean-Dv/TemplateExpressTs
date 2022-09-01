@@ -11,7 +11,7 @@ const getConfig = (): ENV => {
   }
 }
 
-const getSanitizedConfig = (config: ENV): SanitizedEnv => { 
+const getSanitizedConfig = (config: ENV): SanitizedEnv => {
   return config as SanitizedEnv
 }
 
