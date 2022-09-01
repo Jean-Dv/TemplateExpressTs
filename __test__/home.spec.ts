@@ -1,6 +1,6 @@
 import request from 'supertest'
 
-import { appServer, server, routePrefix } from '../app'
+import { appServer, server, routePrefix } from '../bin/www'
 
 describe(`GET ${routePrefix}/ping`, () => {
   test('should return 200 and text pong', async () => {
