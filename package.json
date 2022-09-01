@@ -4,9 +4,9 @@
   "description": "Api for moonshard WoW use database of Cataclysm 4.3.4",
   "main": "app.ts",
   "scripts": {
-    "dev": "NODE_ENV=development DEBUG=app:* ts-node-dev app.ts",
+    "dev": "NODE_ENV=development ts-node-dev bin/www.ts",
     "lint": "ts-standard",
-    "start": "NODE_ENV=production node build/index.js",
+    "start": "NODE_ENV=production node build/bin/www.js",
     "build": "npx tsc",
     "test": "NODE_ENV=test npx jest --verbose",
     "test:watch": "NODE_ENV=test npm run test -- --watchAll"
