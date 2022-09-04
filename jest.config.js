@@ -10,5 +10,10 @@ module.exports = {
     '^.+\\.(ts|tsx)$': 'ts-jest'
   },
   testMatch: ['**/__test__/*.spec.(ts|js)'],
-  testEnvironment: 'node'
+  testEnvironment: 'node',
+  moduleNameMapper: {
+    '^@api(.*)$': '<rootDir>/api$1',
+    '^@config(.*)$': '<rootDir>/config$1',
+    '^@root(.*)$': '<rootDir>$1'
+  }
 }

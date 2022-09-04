@@ -1,4 +1,5 @@
-import { Server } from '../server'
+import 'module-alias/register'
+import { Server } from '@root/server'
 import dotenv from 'dotenv'
 
 dotenv.config()
