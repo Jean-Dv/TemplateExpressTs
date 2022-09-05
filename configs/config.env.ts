@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
 
-import { ENV, SanitizedEnv } from '@config/types'
+import { ENV, SanitizedEnv } from '@configs/types'
 
 dotenv.config()
 
