@@ -12,7 +12,7 @@ module.exports = {
   testMatch: ['**/__test__/*.spec.(ts|js)'],
   testEnvironment: 'node',
   moduleNameMapper: {
-    '^@api(.*)$': '<rootDir>/api$1',
+    '^@apps(.*)$': '<rootDir>/apps$1',
     '^@configs(.*)$': '<rootDir>/configs$1',
     '^@root(.*)$': '<rootDir>$1'
   }
