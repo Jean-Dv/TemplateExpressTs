@@ -13,7 +13,7 @@ module.exports = {
   testEnvironment: 'node',
   moduleNameMapper: {
     '^@api(.*)$': '<rootDir>/api$1',
-    '^@config(.*)$': '<rootDir>/config$1',
+    '^@configs(.*)$': '<rootDir>/config$1',
     '^@root(.*)$': '<rootDir>$1'
   }
 }

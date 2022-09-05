@@ -34,7 +34,7 @@
   },
   "_moduleAliases": {
     "@api": "build/api",
-    "@config": "build/config",
+    "@configs": "build/configs",
     "@root": "build"
   },
   "eslintConfig": {

@@ -1,7 +1,7 @@
 import express, { Application } from 'express'
 import log4js, { Log4js } from 'log4js'
 
-import ConfigEnv from '@config/config.env'
+import ConfigEnv from '@configs/config.env'
 import { homeRouter } from '@api/home/router'
 
 export class Server {
