@@ -34,7 +34,7 @@
     "typescript": "4.7.4"
   },
   "_moduleAliases": {
-    "@api": "build/api",
+    "@apps": "build/apps",
     "@configs": "build/configs",
     "@root": "build"
   },

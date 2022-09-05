@@ -1,7 +1,7 @@
 import express, { Application } from 'express'
 
 import { ConfigEnv, logger } from '@configs/index'
-import { homeRouter } from '@api/home/router'
+import { homeRouter } from '@apps/home/router'
 
 export class Server {
   readonly app!: Application
