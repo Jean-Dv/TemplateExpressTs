@@ -1,0 +1,21 @@
+{
+    "appenders": {
+      "access": {
+        "type": "dateFile",
+        "filename": "logs/access.log",
+        "pattern": "-yyyy-MM-dd",
+        "numBackups": 3
+      },
+      "debug": {
+        "type": "dateFile",
+        "filename": "logs/debug.log",
+        "pattern": "-yyyy-MM-dd",
+        "numBackups": 3
+      }
+    },
+    "categories": {
+      "default": { "appenders": [ "access" ], "level": "ALL" },
+      "access": { "appenders": [ "access"], "level": "DEBUG" },
+      "debug": { "appenders": ["debug"], "level": "DEBUG"}
+    }
+}

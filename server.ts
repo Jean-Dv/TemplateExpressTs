@@ -1,17 +1,13 @@
 import express, { Application } from 'express'
-import log4js, { Log4js } from 'log4js'
 
-import ConfigEnv from '@configs/config.env'
+import { ConfigEnv, logger } from '@configs/index'
 import { homeRouter } from '@api/home/router'
 
 export class Server {
-  public logger!: any
-
   readonly app!: Application
   readonly routePrefix!: string
 
   private port!: string | number
-  private log!: Log4js
 
   private static _instance: Server
 
@@ -29,14 +25,12 @@ export class Server {
 
   private config (): void {
     this.port = ConfigEnv.PORT
-    this.log = log4js
-    this.log.configure('./config/log4js.json')
-    this.logger = this.log.getLogger('server')
   }
 
   private middlewares (): void {
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: false }))
+    this.app.use(logger.express)
   }
 
   private routes (): void {
@@ -46,7 +40,7 @@ export class Server {
   start (): void {
     if (ConfigEnv.NODE_ENV !== 'test') {
       this.app.listen(this.port, () => {
-        this.logger.info(`[*] Server is running on port ${this.port}...`)
+        logger.access.info(`[*] Server is running on port ${this.port}...`)
       })
     }
   }
