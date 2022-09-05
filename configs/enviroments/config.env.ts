@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
 
-import { ENV, SanitizedEnv } from '@config/types'
+import { ENV, SanitizedEnv } from '@configs/types'
 
 dotenv.config()
 
@@ -17,6 +17,6 @@ const getSanitizedConfig = (config: ENV): SanitizedEnv => {
 
 const config = getConfig()
 
-const sanitizedConfig = getSanitizedConfig(config)
+const ConfigEnv = getSanitizedConfig(config)
 
-export default sanitizedConfig
+export default ConfigEnv

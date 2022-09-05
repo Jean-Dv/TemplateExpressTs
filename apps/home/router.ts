@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import { HomeHttpHandler } from '@api/home/http'
+import { HomeHttpHandler } from '@apps/home/http'
 
 export const homeRouter = Router()
 const homeHttpHandler = new HomeHttpHandler()

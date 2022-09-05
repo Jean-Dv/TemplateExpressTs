@@ -1,12 +1,9 @@
 import 'module-alias/register'
 import { Server } from '@root/server'
-import dotenv from 'dotenv'
 
-dotenv.config()
 const server = new Server()
 const appServer = server.app
-const logger = server.logger
 const routePrefix = server.routePrefix
 server.start()
 
-export { server, appServer, routePrefix, logger }
+export { server, appServer, routePrefix }

@@ -9,11 +9,11 @@ module.exports = {
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest'
   },
-  testMatch: ['**/__test__/*.spec.(ts|js)'],
+  testMatch: ['**/__test__/*.spec.ts'],
   testEnvironment: 'node',
   moduleNameMapper: {
-    '^@api(.*)$': '<rootDir>/api$1',
-    '^@config(.*)$': '<rootDir>/config$1',
+    '^@apps(.*)$': '<rootDir>/apps$1',
+    '^@configs(.*)$': '<rootDir>/configs$1',
     '^@root(.*)$': '<rootDir>$1'
   }
 }
