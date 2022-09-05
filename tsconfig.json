@@ -104,6 +104,5 @@
   },
   "exclude": [
     "build",
-    "__test__/**/*.spec.ts"
   ]
 }

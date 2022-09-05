@@ -9,7 +9,7 @@ module.exports = {
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest'
   },
-  testMatch: ['**/__test__/*.spec.(ts|js)'],
+  testMatch: ['**/__test__/*.spec.ts'],
   testEnvironment: 'node',
   moduleNameMapper: {
     '^@apps(.*)$': '<rootDir>/apps$1',
