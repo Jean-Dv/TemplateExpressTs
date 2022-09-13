@@ -1,0 +1,16 @@
+FROM node:16-alpine
+
+WORKDIR /home/code
+
+ENV NODE_ENV=development
+ENV PORT=3000
+
+COPY package.json package-lock.json ./
+COPY tsconfig.json ./
+COPY . /home/code
+
+RUN npm install
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"]
