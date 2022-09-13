@@ -107,6 +107,6 @@
     "bin",
     "configs",
     "server.ts",
-    "**/**/log4js.json"
-  ]
+  ],
+  "exclude": [ "node_modules" ]
 }

@@ -7,9 +7,11 @@
     "dev": "NODE_ENV=development tsc-watch --onSuccess \"node ./build/bin/www.js\"",
     "lint": "ts-standard",
     "start": "NODE_ENV=production node build/bin/www.js",
-    "build": "npx tsc",
     "test": "NODE_ENV=test npx jest --verbose",
-    "test:watch": "NODE_ENV=test npm run test -- --watchAll"
+    "test:watch": "NODE_ENV=test npm run test -- --watchAll",
+    "build": "npm run build:clean && npm run build:tsc",
+    "build:tsc": "npx tsc -p tsconfig.prod.json",
+    "build:clean": "rm -rf build; exit 0"
   },
   "author": "JeanDev <mrjunior127@gmail.com> (https://github.com/Jean-Dv)",
   "license": "MIT",
