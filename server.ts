@@ -1,3 +1,5 @@
+import helmet from 'helmet'
+import compress from 'compression'
 import express, { Application } from 'express'
 
 import { ConfigEnv, logger } from '@configs/index'
@@ -29,7 +31,12 @@ export class Server {
 
   private middlewares (): void {
     this.app.use(express.json())
-    this.app.use(express.urlencoded({ extended: false }))
+    this.app.use(express.urlencoded({ extended: true }))
+    this.app.use(helmet.xssFilter())
+    this.app.use(helmet.noSniff())
+    this.app.use(helmet.hidePoweredBy())
+    this.app.use(helmet.frameguard({ action: 'deny' }))
+    this.app.use(compress())
     this.app.use(logger.express)
   }
 

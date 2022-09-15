@@ -107,6 +107,7 @@
     "bin",
     "configs",
     "server.ts",
+    "__test__"
   ],
   "exclude": [ "node_modules" ]
 }
